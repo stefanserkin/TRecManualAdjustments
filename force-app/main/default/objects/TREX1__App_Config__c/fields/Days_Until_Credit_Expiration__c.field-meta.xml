@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Until_Credit_Expiration__c</fullName>
+    <description>The number of days that must pass before credits should be expired in Traction Rec</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of days that must pass before credits should be expired in Traction Rec</inlineHelpText>
+    <label>Days Until Credit Expiration</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

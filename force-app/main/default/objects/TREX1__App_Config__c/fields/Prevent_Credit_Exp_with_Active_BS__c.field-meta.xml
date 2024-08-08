@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Credit_Exp_with_Active_BS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, accounts with active billing schedules will be omitted from the credit expiration batch</description>
+    <inlineHelpText>If checked, accounts with active billing schedules will be omitted from the credit expiration batch</inlineHelpText>
+    <label>Prevent Credit Exp with Active BS</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

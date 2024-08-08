@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expired_Customer_Credits__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The default account for expired credits. Used if no revenue account is found.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The default account for expired credits. Used if no revenue account is found.</inlineHelpText>
+    <label>Expired Customer Credits</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>
