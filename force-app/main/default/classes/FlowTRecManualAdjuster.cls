@@ -11,7 +11,8 @@ public with sharing class FlowTRecManualAdjuster {
         List<Result> lstResults = new List<Result>();
         for (Request req : lstRequests) {
             Result result = new Result();
-            TRecManualAdjustmentService serv = new TRecManualAdjustmentService(req.lstWrappers);
+            List<TRecManualAdjustmentWrapper> lstWrappersWithUniqueIds = enforceUniqueIds(req.lstWrappers);
+            TRecManualAdjustmentService serv = new TRecManualAdjustmentService(lstWrappersWithUniqueIds);
             if (!String.isBlank(req.description)) {
                 serv.description = req.description;
             }
@@ -19,6 +20,20 @@ public with sharing class FlowTRecManualAdjuster {
             lstResults.add(result);
         }
         return lstResults;
+    }
+
+    private static List<TRecManualAdjustmentWrapper> enforceUniqueIds(
+        List<TRecManualAdjustmentWrapper> lstWrappers
+    ) {
+        Set<String> setIds = new Set<String>();
+        for (TRecManualAdjustmentWrapper wrap : lstWrappers) {
+            if (setIds.contains(wrap.id)) {
+                String uuid = UUID.randomUUID().toString();
+                wrap.overrideId(uuid);    
+            }
+            setIds.add(wrap.id);
+        }
+        return lstWrappers;
     }
 
     public class Request {
@@ -32,4 +47,5 @@ public with sharing class FlowTRecManualAdjuster {
         @InvocableVariable(label='Manual Adjustment Transaction IDs')
         public List<Id> lstTransactionIds;
     }
+    
 }

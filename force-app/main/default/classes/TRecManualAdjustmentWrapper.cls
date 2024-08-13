@@ -60,4 +60,14 @@ public with sharing class TRecManualAdjustmentWrapper {
     @AuraEnabled
     public String membershipPromotionId {get; set;}
 
+    /*******************************************
+     * @description Override the wrapper id. 
+     * Used when the manual adjustment service is being called from a flow.
+     * @param newId - A preferred unique identifier for the wrapper object
+     * @return void
+     *******************************************/
+    public void overrideId(String newId) {
+        this.id = newId;
+    }
+
 }
