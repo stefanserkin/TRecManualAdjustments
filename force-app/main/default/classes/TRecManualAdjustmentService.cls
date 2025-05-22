@@ -90,6 +90,7 @@ public with sharing class TRecManualAdjustmentService {
         // A Rec trigger will update the tli statuses, generate receipt pdfs, and recalculate account rollups
         for (TREX1__Transaction__c t : lstTransactions) {
             t.TREX1__Status__c = STATUS_FIRMED;
+            t.TREX1__Payment_Complete__c = true;
         }
         update lstTransactions;
 
